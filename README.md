@@ -1,3 +1,5 @@
-Repository for labs
-VVSU Programm Enginering 2025
+# Repository for labs
+
+VVSU БИН-25-2
+
 Karataev Danil
