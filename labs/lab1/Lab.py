@@ -22,7 +22,7 @@ def num4():
     print(((a4 + (4 * b4)) * (a4 - (3 * b4))) + (a4**2))
 
 def num5():
-    print(int(input('')) * int(input('')))
+    print(int(input('Enter number 1:')) * int(input('Enter')))
 
 def num6():
     print('*   *   *')
@@ -52,9 +52,9 @@ def num10():
     print('Нет! Да! ' * 4)
 
 def num11():
-    e11 = int(input(''))
+    e11 = input('')
     a11, b11, c11 = e11.split(',')
-    d11 = (a11 + c11) // b11
+    d11 = (int(a11) + int(c11)) // int(b11)
     print('Результат вычисления: ', d11)
 
 def num12():
@@ -63,5 +63,3 @@ def num12():
     print(a12[8:10])
     print(a12[4:8])
     print(a12[::-1])
-    
-num11
