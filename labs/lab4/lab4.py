@@ -44,10 +44,9 @@ def num3():
 def num4():
     a = input('Enter number:')
     b = 0
-    for i in range(len(a)-1):
+    for i in range(len(a)):
         b += int(a[i])
-
-    if int(a[len(a)-1]) // 2 == 0 and b // 3 == 0:
+    if int(a[len(a)-1]) % 2 == 0 and b % 3 == 0:
         print('Число кратно 6')
     else:
         print('Число некратно 6')
@@ -83,5 +82,70 @@ def num5():
     if c1 == True and c2 == True and c3 == True and c4 == True:
         print('Пароль надёжный')
 
+def num6():
+    a = int(input('Enter year:'))
+    if a % 4 == 0 and a % 100 != 0 or a % 400 == 0:
+        print(a,'- високосный год')
+    else:
+        print(a,'- не високосный год')
 
-num5()
+def num7():
+    a = input('Введите 3 числа через запятую:')
+    b = []
+    c,d,e = a.split(',')
+    b.append(int(c))
+    b.append(int(d))
+    b.append(int(e))
+    n_min = 100
+    n_max = 0
+    for i in range(3):
+        if n_min > b[i]:
+            n_min = b[i]
+        if n_max < b[i]:
+            n_max = b[i]
+    print('Минимальное число -',n_min)
+    print('Максимальное число -',n_max)
+
+def num8():
+    a = int(input('Enter sum:'))
+    if a < 1000:
+        print('Ваша скидка: 0%')
+        print('Итоговая сумма:',a)
+    elif a > 1000 and a < 5000:
+        print('Ваша скидка: 5%')
+        print('Итоговая сумма:',a*0.95)
+    elif a > 5000 and a < 10000:
+        print('Ваша скидка: 10%')
+        print('Итоговая сумма:',a*0.9)
+    elif a > 10000:
+        print('Ваша скидка: 15%')
+        print('Итоговая сумма:',a*0.85)
+
+def num9():
+    a = int(input("Введите час:"))
+    if a > 0 and a < 6:
+        print('Сейчас ночь')
+    elif a > 5 and a < 12:
+        print('Сейчас утро')
+    elif a > 11 and a < 18:
+        print('Сейчас день')
+    elif a > 17 and a < 24:
+        print('Сейчас вечер')
+
+def num10():
+    a = input('Введите число:')
+    b = True
+    if a.isdigit():
+        a = int(a)
+        for i in range(2,a):
+            if a < 1 or a % i == 0:
+                b = False
+        if b == True:
+            print('Число простое')
+        else:
+            print('Число не простое')
+    else:
+        print('Введено не число')
+    
+
+num10()
