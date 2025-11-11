@@ -21,13 +21,7 @@ def num3():
     b = 0
     c = False
     d = []
-    for i in range(1,100):
-        d.append(str(i))
-    
-    if a in d:
-        c = True
-
-    if c == True:
+    if a.isdigit():
         a = int(a)
         if a > 1 and a < 23:
             if a == 2:
@@ -70,7 +64,8 @@ def num5():
             c3 = True
         if a[i] in b4:
             c4 = True
-
+    if len(a) < 8:
+        print('В пароле меньше 8 символов')
     if c1 == False:
         print('Пароль ненадёжный, отсутствуют цифры')
     if c2 == False:
@@ -148,4 +143,4 @@ def num10():
         print('Введено не число')
     
 
-num10()
+num3()
