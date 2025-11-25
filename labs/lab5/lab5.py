@@ -9,7 +9,7 @@ def num1():
 
 def num2():
     a = [2,3,4,5,6]
-    for i in range(5):
+    for i in range(len(a)):
         a[i] = a[i]**2
     print(a)
 
@@ -24,26 +24,14 @@ def num4():
         if not(a[i].isdigit()):
             b = False
     if b:
-        a = list(map(int,a))
-        a = tuple(sorted(a))
+        a = tuple(sorted(map(int,a)))
         print(a)
     else:
         print("В кортеже есть слово")
     
 def num5():
     a = {'apple' : 21,'milk' : 100,'bread' : 35,'orange' : 45}
-    b = 0
-    c = 100000
-    e = ''
-    d = ''
-    for i,j in a.items():
-        if j > b:
-            b = j
-            d = i
-        if j < c:
-            c = j
-            e = i
-    print(f"Max {d}, min {e}")
+    print(f"Max {max(a, key = a.get)}, min {min(a, key = a.get)}")
 
 def num6():
     a = ['12','a','r']
@@ -83,4 +71,20 @@ def num8():
     elif a == 'Спок' and b[c] == 'Ящерица': print('Компьютер победил')
     elif a == 'Спок' and b[c] == 'Ножницы': print('Игрок победил')
 
-num8()
+def num9():
+    a = ["яблоко", "груша", "банан", "киви", "апельсин", "ананас"]
+    b = {}
+    for i in a:
+        if i[0] in b:
+            b[i[0]].append(i)
+        else:
+            b[i[0]] = list(i.split())
+    print(b)
+
+def num10():
+    a = [("Анна", [5, 4, 5]), ("Иван", [3, 4, 4]), ("Мария", [5, 5, 5])]
+    b = {}
+    for i in a:
+        b[i[0]] = sum(i[1]) / len(i[1])
+    print(b)
+    print(f'{max(b, key = b.get)} имеет наивысший средний балл: {b[max(b, key = b.get)]}')
