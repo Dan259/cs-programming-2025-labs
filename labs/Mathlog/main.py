@@ -4,7 +4,7 @@ count3 = 0
 while True:
     a = input('Введите 5 пар чисел:').split()
     for i in a:
-        i.split(',')
+        i = [int(x) for x in i.split(',')]
         if i[0] < i[1]:
             count1 += 1
         if i[0] > i[1]:
