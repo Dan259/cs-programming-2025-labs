@@ -8,7 +8,7 @@ def num1():
     print(a)
 
 def num2():
-    a = [2,3,4,5,6]
+    a = [2,4,6,8,10]
     for i in range(len(a)):
         a[i] = a[i]**2
     print(a)
@@ -60,6 +60,7 @@ def num8():
     elif a == 'Ящерица' and b[c] == 'Спок': print('Игрок победил')
     elif a == 'Спок' and b[c] == 'Камень': print('Игрок победил')
     elif a == 'Спок' and b[c] == 'Ножницы': print('Игрок победил')
+    elif a == b[c]: print('Ничья')
     else:
         print("Победил компьютер")
 
