@@ -20,9 +20,6 @@ for i in range(int(a[1])):
     income_all += income
     a[0] = float(a[0]) + income
 
-    #Вывод
-    print(a[0],b,income,income_all)
-
     #Обнуление переменных в цикле
     b = 0
     income = 0
