@@ -11,7 +11,7 @@ for i in range(int(a[1])):
         b += 0.3
         b = round(b,1)
     if i+1 <= 3: b += 3
-    elif 4 <= i+1 <= 6: b += 5
+    elif 4 <= i+1 <= 6: b += 4.48
     else: b += 2
 
     #Расчёт прибыли
@@ -19,7 +19,7 @@ for i in range(int(a[1])):
     income = round(income,2)
     income_all += income
     a[0] = float(a[0]) + income
-
+    print(income,a[0],b)
     #Обнуление переменных в цикле
     b = 0
     income = 0
