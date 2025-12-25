@@ -4,6 +4,9 @@ income = 0
 income_all = 0
 for i in range(int(a[1])):
     a1 = float(a[0])
+    if int(a[0]) < 30000:
+        print("Error!")
+        break
 
     #Расчёт процентов
     while b <= 4.7 and a1 > 9999:
@@ -11,7 +14,7 @@ for i in range(int(a[1])):
         b += 0.3
         b = round(b,1)
     if i+1 <= 3: b += 3
-    elif 4 <= i+1 <= 6: b += 4.48
+    elif 4 <= i+1 <= 6: b += 5
     else: b += 2
 
     #Расчёт прибыли
@@ -19,7 +22,7 @@ for i in range(int(a[1])):
     income = round(income,2)
     income_all += income
     a[0] = float(a[0]) + income
-    print(income,a[0],b)
+
     #Обнуление переменных в цикле
     b = 0
     income = 0

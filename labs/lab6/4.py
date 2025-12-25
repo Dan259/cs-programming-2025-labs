@@ -1,7 +1,7 @@
 a = input('').split()
 b = []
 c = []
-e = False
+d = False
 while True:
     #Проверка разрерности матриц
     if int(a[0]) <= 2 or int(a[1]) <= 2:
@@ -19,12 +19,11 @@ while True:
     #Обработка ошибок
     for i in range(int(a[0])):
         if len(b[i]) != int(a[1]):
-            print('Error! Количество символов в строке не соответствует размерности')
-            e = True
+            d = True
         if len(c[i]) != int(a[1]):
-            print('Error! Количество символов в строке не соответствует размерности')
-            e = True
-    if e == True:
+            d = True
+    if d == True:
+        print('Error! Количество символов в строке не соответствует размерности')
         break
 
     #Сложение и вывод

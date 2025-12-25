@@ -8,7 +8,7 @@ for i in range(a[0],a[1]+1):
     for j in range(2,a[1]+1):
         if i % j == 0 and i != j:
             b.append(i)
-            break
+            break 
 
 #Выбор простых чисел
 for i in range(a[0],a[1]+1):
