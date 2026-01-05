@@ -15,5 +15,7 @@ reports = [
     {"author": "Senior Researcher Hall", "text": "All test results verified and approved."},
     {"author": "Operations Lead Grant", "text": "Emergency protocol draft shared via https://ops-share.scp"}
 ]
-a = list(filter(lambda x: 'http' in x['text'], reports))
+a = list(filter(lambda x: x['text'] if 'http' in x['text'] else False, reports))
+for i in a:
+    i['text'] = 'ДАННЫЕ УДАЛЕНЫ'
 print(a)
