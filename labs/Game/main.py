@@ -20,10 +20,8 @@ lvl = 1
 stat_point = 0
 
 create_char() 
-char.show_inventory()
-char.use_items()
-char.use_items()
-char.show_stats(lvl,exp,req_exp)
+exp += 10
+lvl_up()
 # exp += 10
 # lvl_up()
 # char.show_stats(lvl,exp,req_exp)

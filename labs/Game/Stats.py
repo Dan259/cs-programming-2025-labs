@@ -3,9 +3,6 @@ from random import *
 items = [['Меч','Кинжал','Лук','Копье','Сковородочаки'],['Латная броня','Кольчуга','Кожаная броня'],['Зелье здоровья(Маленькое)','Зелье здоровья(Среднее)','Зелье здоровья(Большое)']]
 inventory = {'Weapon':'','Armor':''}
 for i in range(1,6): inventory[str(i)] = ''
-inventory['1'] = 'Меч(1)'
-inventory['2'] = 'Латная броня(1)'
-inventory['3'] = 'Зелье здоровья(Маленькое)'
 
 
 class Character:
@@ -28,6 +25,7 @@ class Character:
         self.money = 0
 
     def char_stats(self):
+        # Создание человека
         if self._race == "1":
             self.max_hp = randint(90,110)
             self.strenght = randint(4,8)
@@ -41,6 +39,8 @@ class Character:
             elif weight > 80 and height > 190:
                 self.strenght += 1
                 self.agility -= 1
+            
+        # Создание эльфа
         elif self._race == "2":
             self.max_hp = randint(70,90)
             self.strenght = randint(4,8)
@@ -54,6 +54,8 @@ class Character:
             elif weight > 60 and height > 200:
                 self.strenght += 1
                 self.agility -= 1
+
+        # Создание дворфа
         elif self._race == "3":
             self.max_hp = randint(100,130)
             self.strenght = randint(5,10)
@@ -87,11 +89,7 @@ class Character:
         print('---------')
 
     def up_stats(self):
-        print("Выберите характеристику:")
-        print("1 - +2 к HP")
-        print("2 - +1 к атаке")
-        print("3 - +1 к ловкости")
-        print("4 - +1 к броне")
+        print("Выберите характеристику:\n1 - +2 к HP\n2 - +1 к атаке\n3 - +1 к ловкости\n4 - +1 к броне")
         num_up = input('> ')
         if num_up == "1":
             self.max_hp += 2
@@ -132,6 +130,7 @@ class Character:
                 choosen_num = input('> ')
                 print('Что вы хотите с ним сделать?')
 
+                # Для оружия
                 if any(item in inventory[choosen_num] for item in items[0]):
                     print('1 - Переложить  в основную руку\n2 - Выкинуть\n3 - Ничего')
                     choosen_num1 = input('> ')
@@ -155,7 +154,8 @@ class Character:
                         inventory[choosen_num] = ''
                     elif choosen_num1 == '3':
                         pass
-
+                
+                # Для брони
                 elif any(item in inventory[choosen_num] for item in items[1]):
                     print('1 - Надеть\n2 - Выкинуть\n3 - Ничего')
                     choosen_num1 = input('> ')
@@ -174,7 +174,8 @@ class Character:
                         inventory[choosen_num] = ''
                     elif choosen_num1 == '3':
                         pass
-
+                
+                # Для расходников
                 elif inventory[choosen_num] in items[2]:
                     print('1 - Выпить\n2 - Выкинуть\n3 - Ничего')
                     choosen_num1 = input('> ')
