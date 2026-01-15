@@ -1,4 +1,4 @@
-from Stats import *
+from Character import *
 def create_char():
     global char
     char = Character()
@@ -7,4 +7,5 @@ def create_char():
 
 create_char() 
 while True:
-    char.menu()
+    if char.menu():
+        break
