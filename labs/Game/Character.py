@@ -33,10 +33,10 @@ class Character:
         self.race = input("> ")
         # Создание человека
         if self.race == "1":
-            self.max_hp = randint(90,110)
+            self.max_hp = randint(80,100)
             self.strenght = randint(4,8)
             self.agility = randint(5,10)
-            self.defence = randint(3,5)
+            self.defence = randint(1,3)
             self.height = randint(150,200)
             self.weight = randint(60,90)
             if self.weight < 70 and self.height < 160:
@@ -51,8 +51,8 @@ class Character:
         elif self.race == "2":
             self.max_hp = randint(70,90)
             self.strenght = randint(4,8)
-            self.agility = randint(8,14)
-            self.defence = randint(3,5)
+            self.agility = randint(7,13)
+            self.defence = randint(1,3)
             self.height = randint(175,210)
             self.weight = randint(40,70)
             if self.weight < 50 and self.height < 185:
@@ -67,8 +67,8 @@ class Character:
         elif self.race == "3":
             self.max_hp = randint(100,130)
             self.strenght = randint(5,10)
-            self.agility = randint(3,6)
-            self.defence = randint(6,10)
+            self.agility = randint(2,4)
+            self.defence = randint(3,5)
             self.height = randint(100,130)
             self.weight = randint(70,100)
             if self.weight < 80 and self.height < 110:
@@ -192,13 +192,13 @@ class Character:
                         if inventory['Armor'] != '': self.switch_main_item(inventory['Armor'],'Armor')
                         inventory['Armor'] = inventory[chosen_num]
                         if 'Латная броня' in inventory['Armor']:
-                            self.defence += 6 + int(inventory['Armor'][13:][:1])
+                            self.defence += 5 + int(inventory['Armor'][13:][:1])
                         elif 'Кольчуга' in inventory['Armor']:
-                            self.defence += 4 + int(inventory['Armor'][9:][:1])
-                            self.agility += 2 + int(inventory['Armor'][9:][:1])
+                            self.defence += 3 + int(inventory['Armor'][9:][:1])
+                            self.agility += 1 + int(inventory['Armor'][9:][:1])
                         elif 'Кожаная броня' in inventory['Armor']:
-                            self.defence += 3 + int(inventory['Armor'][14:][:1])
-                            self.agility += 4 + int(inventory['Armor'][14:][:1])
+                            self.defence += 2 + int(inventory['Armor'][14:][:1])
+                            self.agility += 3 + int(inventory['Armor'][14:][:1])
                         inventory[chosen_num] = ''
                     elif chosen_num1 == '2':
                         inventory[chosen_num] = ''
@@ -234,29 +234,39 @@ class Character:
         print(f'\nЧто вы хотите сделать с {name}\n1 - Вернуть в инвентарь\n2 - Выкинуть\n')
         chosen_num = input('> ')
         print(self.defence,self.strenght,self.agility)
-        if name in items[0]:
-            if 'Меч' in inventory['Weapon']:
-                self.strenght -= 3 + int(inventory['Weapon'][4:][:1]) * 2
-            elif 'Кинжал' in inventory['Weapon']:
-                self.strenght -= 1 + int(inventory['Weapon'][7:][:1]) * 2
-                self.agility -= 2 + int(inventory['Weapon'][7:][:1]) * 2
-            elif 'Лук' in inventory['Weapon']:
-                self.agility -= 3 + int(inventory['Weapon'][4:][:1]) * 2
-            elif 'Копье' in inventory['Weapon']:
-                self.strenght -= 2 + int(inventory['Weapon'][6:][:1]) * 2
-                self.defence -= 1 + int(inventory['Weapon'][6:][:1]) * 2
-            elif 'Сковородочаки' in inventory['Weapon']:
-                self.agility -= 2 + int(inventory['Weapon'][14:][:1]) * 2
-                self.defence -= 2 + int(inventory['Weapon'][14:][:1]) * 2
-        else:
-            if 'Латная броня' in inventory['Armor']:
-                self.defence -= 6 + int(inventory['Armor'][13:][:1])
-            elif 'Кольчуга' in inventory['Armor']:
-                self.defence -= 4 + int(inventory['Armor'][9:][:1])
-                self.agility -= 2 + int(inventory['Armor'][9:][:1])
-            elif 'Кожаная броня' in inventory['Armor']:
-                self.defence -= 3 + int(inventory['Armor'][14:][:1])
-                self.agility -= 4 + int(inventory['Armor'][14:][:1])
+        for i in items[0]:
+            if i in name:
+                if 'Меч' in inventory['Weapon']:
+                    print(1)
+                    self.strenght -= 3 + int(inventory['Weapon'][4:][:1]) * 2
+                elif 'Кинжал' in inventory['Weapon']:
+                    print(2)
+                    self.strenght -= 1 + int(inventory['Weapon'][7:][:1]) * 2
+                    self.agility -= 2 + int(inventory['Weapon'][7:][:1]) * 2
+                elif 'Лук' in inventory['Weapon']:
+                    print(3)
+                    self.agility -= 3 + int(inventory['Weapon'][4:][:1]) * 2
+                elif 'Копье' in inventory['Weapon']:
+                    print(4)
+                    self.strenght -= 2 + int(inventory['Weapon'][6:][:1]) * 2
+                    self.defence -= 1 + int(inventory['Weapon'][6:][:1]) * 2
+                elif 'Сковородочаки' in inventory['Weapon']:
+                    print(5)
+                    self.agility -= 2 + int(inventory['Weapon'][14:][:1]) * 2
+                    self.defence -= 2 + int(inventory['Weapon'][14:][:1]) * 2
+        for j in items[1]:
+            if j in name:
+                if 'Латная броня' in inventory['Armor']:
+                    print(1)
+                    self.defence -= 5 + int(inventory['Armor'][13:][:1])
+                elif 'Кольчуга' in inventory['Armor']:
+                    print(2)
+                    self.defence -= 3 + int(inventory['Armor'][9:][:1])
+                    self.agility -= 1 + int(inventory['Armor'][9:][:1])
+                elif 'Кожаная броня' in inventory['Armor']:
+                    print(3)
+                    self.defence -= 2 + int(inventory['Armor'][14:][:1])
+                    self.agility -= 3 + int(inventory['Armor'][14:][:1])
         print(self.defence,self.strenght,self.agility)
         if chosen_num == '1': self.add_in_inventory(name)
         elif chosen_num == '2': inventory[category] = ''
@@ -494,6 +504,7 @@ class Character:
             pass
         else:
             print("Враг повержен")
+            self.exp += mob_stats[5]
             self.drop()
 
     def gameover(self):

@@ -12,6 +12,7 @@ class Mob:
         self.defence = 0
         self.floor = mob_lvl
         self.room = room
+        self.exp = 0
 
     def mob_stats(self):
         rand_num = randint(0,100)
@@ -112,6 +113,7 @@ class Mob:
             
     def mob_show_stats(self):
         self.mob_scale()
+        self.mob_exp()
         print('ВАШ ВРАГ:')
         print('---------')
         print(f'Name:{self.name}')
@@ -121,4 +123,12 @@ class Mob:
         print(f'AGI:{self.agility}')
         print(f'DEF:{self.defence}') 
         print('---------')
-        return self.cur_hp, self.max_hp, self.strenght, self.agility, self.defence
+        return self.cur_hp, self.max_hp, self.strenght, self.agility, self.defence, self.exp
+    
+    def mob_exp(self):
+        if self.name in mobs[:9]:
+            self.exp = 3 * self.floor
+        elif self.name in mobs[9:][:1]:
+            self.exp = 3 * self.floor
+        elif self.name in mobs[10:]:
+            self.exp = 3 * self.floor
