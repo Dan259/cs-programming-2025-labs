@@ -104,17 +104,17 @@ class Character:
     
     def show_stats(self):
         print('\nВАШ ПЕРСОНАЖ:')
-        print('---------')
+        print('----------')
         print(f'Name:{self.name}')
-        print('---------')
+        print('----------')
         print(f'LVL:{self.lvl}')
         print(f'EXP:{self.exp}\{self.req_exp}')
-        print('---------')
+        print('----------')
         print(f'HP:{self.cur_hp}\{self.max_hp}')
         print(f'STR:{self.strenght}')
         print(f'AGI:{self.agility}')
         print(f'DEF:{self.defence}') 
-        print('---------')
+        print('----------')
 
     def up_stats(self):
         while self.stat_point > 0:
