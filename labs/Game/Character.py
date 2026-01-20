@@ -648,7 +648,7 @@ class Character:
         else:
             print("Враг повержен")
             self.exp += mob_stats[5]
-            self.money += 3
+            self.money += mob_stats[6]
             self.drop()
 
     def gameover(self):
