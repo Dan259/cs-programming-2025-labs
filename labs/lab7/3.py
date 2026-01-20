@@ -10,5 +10,4 @@ a = list(map(lambda x: {
         "Top Secret"
     )
 }, personnel))
-
 print(a)
