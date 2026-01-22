@@ -1,4 +1,5 @@
 from Character import *
+
 def create_char():
     global char
     char = Character()
