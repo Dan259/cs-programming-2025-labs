@@ -358,7 +358,7 @@ class Character:
     def menu(self):
         if self.cur_hp <= 0:
             print("Игра закончена")
-            return True
+            return self.gameover()
         
         self.change_floor()
         self.lvl_up()
@@ -667,11 +667,14 @@ class Character:
             self.lvl = 1
             self.stat_point = 0
             self.room = 0
+            inventory = {'Weapon':'','Armor':''}
+            for i in range(1,6): inventory[str(i)] = ''
             self.char_stats()
             self.show_stats()
+            return False
 
         elif chosen_num == "2":
-            pass
+            return True
 
         else:
             print("Такого варианта нет!")
