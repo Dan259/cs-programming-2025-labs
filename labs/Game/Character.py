@@ -100,7 +100,6 @@ class Character:
             self.char_stats()
 
         self.cur_hp = self.max_hp
-        return self.max_hp, self.strenght, self.agility, self.defence, self.height, self.weight
     
     def show_stats(self):
         print('\nВАШ ПЕРСОНАЖ:')
@@ -118,7 +117,7 @@ class Character:
 
     def up_stats(self):
         while self.stat_point > 0:
-            print("Выберите характеристику:\n1 - +2 к HP\n2 - +1 к атаке\n3 - +1 к ловкости\n4 - +1 к броне")
+            print("\nВыберите характеристику:\n1 - +2 к HP\n2 - +1 к атаке\n3 - +1 к ловкости\n4 - +1 к броне\n")
             num_up = input('> ')
 
             if num_up == "1":
